@@ -1,0 +1,82 @@
+import { useEffect, useState } from "react";
+import { apiFetch } from "../../utils/api"; // adjust path if needed
+
+type AnonymousSession = {
+  id: number;
+  started_at: string;
+  ended_at?: string | null;
+};
+
+export default function AnonymousActivityPage() {
+  const [sessions, setSessions] = useState<AnonymousSession[]>([]);
+
+  useEffect(() => {
+    const fetchSessions = async () => {
+      try {
+        const data = await apiFetch("/api/chat/admin/anonymous-sessions/", {
+          credentials: "include",
+        });
+        setSessions(data);
+      } catch (error) {
+        console.error("Error loading anonymous sessions:", error);
+      }
+    };
+
+    fetchSessions();
+  }, []);
+
+  return (
+    <div className="p-8">
+      <h1 className="text-3xl font-bold text-red-500">Anonymous Chat Activity</h1>
+      <div className="mt-6 overflow-x-auto rounded-lg shadow-lg">
+        <table className="min-w-full border-collapse">
+          <thead>
+            <tr className="bg-gray-800 text-white text-left text-sm font-bold tracking-wide">
+              <th className="px-5 py-3">Session ID</th>
+              <th className="px-5 py-3">Started At</th>
+              <th className="px-5 py-3">Ended At</th>
+              <th className="px-5 py-3 text-center">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sessions.length > 0 ? (
+              sessions.map((session) => (
+                <tr
+                  key={session.id}
+                  className="bg-gray-900 text-white hover:bg-red-600 hover:text-white rounded transition-colors"
+                >
+                  <td className="px-5 py-4">{session.id}</td>
+                  <td className="px-5 py-4">
+                    {new Date(session.started_at).toLocaleString()}
+                  </td>
+                  <td className="px-5 py-4">
+                    {session.ended_at
+                      ? new Date(session.ended_at).toLocaleString()
+                      : "Active"}
+                  </td>
+                  <td className="px-5 py-4 text-center">
+                    <span
+                      className={`inline-block rounded-full px-3 py-1 text-xs font-semibold ${
+                        session.ended_at
+                          ? "bg-gray-600 text-white"
+                          : "bg-green-600 text-white"
+                      }`}
+                    >
+                      {session.ended_at ? "Ended" : "Active"}
+                    </span>
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan={4} className="text-center py-8 text-white">
+                  No anonymous activity found.
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
