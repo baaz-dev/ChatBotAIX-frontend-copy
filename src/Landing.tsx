@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link, Route, Routes } from "react-router-dom";
 
 // Image paths from public folder
 const heroImage = "/hero.png";
@@ -331,6 +332,11 @@ export default function Landing({
             <div className="text-gray-400 text-sm text-center md:text-left">
               <p>Copyright 2025 | SPEAK WITH AMBER All Rights Reserved.</p>
             </div>
+            <div className="text-gray-400 text-sm text-center md:text-left">
+            <Link to="/terms-of-service">Terms of Service</Link>&nbsp;-&nbsp; 
+            <Link to="/privacy-policy">Privacy Policy</Link>&nbsp;-&nbsp; 
+            <Link to="/cookie-policy">Cookie Policy</Link>
+            </div>            
           </div>
         </div>
       </footer>
