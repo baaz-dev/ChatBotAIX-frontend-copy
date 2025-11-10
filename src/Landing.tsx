@@ -13,8 +13,7 @@ const gridImage5 = "/grid-5.png";
 const gridImage6 = "/grid-6.png";
 const gridImage7 = "/grid-7.png";
 const gridImage8 = "/grid-8.png";
-const amberLogo = "/AMBER-LOGO.svg";
-
+const evaLogo = "/EVA-LOGO.png";
 type LandingProps = {
   onRegisterClick: () => void;
   onLoginClick: () => void;
@@ -45,8 +44,8 @@ export default function Landing({
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              {amberLogo ? (
-                <img src={amberLogo} alt="Amber Logo" className="h-16 w-auto" />
+              {evaLogo ? (
+                <img src={evaLogo} alt="Eva Logo" className="h-16 w-auto" />
               ) : (
                 <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center">
                   <span className="text-black font-bold text-sm">🔥</span>
@@ -130,7 +129,7 @@ export default function Landing({
               {heroImage ? (
                 <img
                   src={heroImage}
-                  alt="Amber Hero"
+                  alt="Eva Hero"
                   className="w-full h-full object-cover rounded-2xl"
                 />
               ) : (
@@ -141,16 +140,16 @@ export default function Landing({
             </div>
             <div className="text-center">
               <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Say hi... let's make this nasty.
+              I'm ready... let's get started.
               </h1>
               <button
                 onClick={onRegisterClick}
                 className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-semibold text-lg transition-colors"
               >
-                Chat now for free!
+                CHAT NOW FOR FREE
               </button>
               <p className="mt-3 text-sm text-red-300">
-                10 minutes free upon sign up
+              10 free minutes after sign up
               </p>
             </div>
           </div>
@@ -169,31 +168,31 @@ export default function Landing({
                     {galleryImage1 ? (
                       <img
                         src={galleryImage1}
-                        alt="No Panties Today"
+                        alt="Wanna see what’s underneath?"
                         className="w-full h-full object-cover rounded-2xl"
                       />
                     ) : (
                       <div className="text-gray-400 font-medium">
-                        No Panties Today
+                        Wanna see what’s underneath?
                       </div>
                     )}
                   </div>
-                  <p className="text-white text-center">No Panties Today</p>
+                  <p className="text-white text-center">Wanna see what’s underneath?</p>
                 </div>
                 <div className="flex-shrink-0">
                   <div className="w-64 h-48 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl mb-2 flex items-center justify-center relative">
                     {galleryImage2 ? (
                       <img
                         src={galleryImage2}
-                        alt="Only If You Beg"
+                        alt="It wouldn’t take much..."
                         className="w-full h-full object-cover rounded-2xl"
                       />
                     ) : (
                       <div className="text-gray-400 font-medium">
-                        Only If You Beg
+                        It wouldn’t take much...
                       </div>
                     )}
-                    <div className="absolute right-2 top-2 w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                    <div className="hidden absolute right-2 top-2 w-8 h-8 bg-white rounded-full flex items-center justify-center">
                       <svg
                         className="w-4 h-4 text-black"
                         fill="none"
@@ -209,7 +208,7 @@ export default function Landing({
                       </svg>
                     </div>
                   </div>
-                  <p className="text-white text-center">Only If You Beg</p>
+                  <p className="text-white text-center">It wouldn’t take much...</p>
                 </div>
               </div>
             </div>
@@ -217,20 +216,19 @@ export default function Landing({
             {/* Content */}
             <div className="lg:w-1/2 text-center lg:text-left">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                Want to See More?
+              Want more?
               </h2>
               <p className="text-xl text-red-300 mb-4">
-                Say the Right Words and It's Yours
+              That depends on you... and what you say.
               </p>
               <p className="text-gray-300 mb-8 text-lg">
-                I don't just tease-I reward. Chat with me to unlock what you
-                really want.
+              Go on — unlock me. There’s so much more waiting for you.
               </p>
               <button
                 onClick={onRegisterClick}
                 className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-semibold text-lg transition-colors"
               >
-                Chat now for free!
+                CHAT NOW FOR FREE
               </button>
             </div>
           </div>
@@ -245,7 +243,7 @@ export default function Landing({
               {mainContentImage ? (
                 <img
                   src={mainContentImage}
-                  alt="Amber Main Content"
+                  alt="Eva Main Content"
                   className="w-full h-full object-cover rounded-2xl"
                 />
               ) : (
@@ -263,24 +261,24 @@ export default function Landing({
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              See More of ME
+            I've got so much more for you
             </h2>
             <p className="text-xl text-red-300">
-              A little tease before you please.
+            I need your words… strong and sure.
             </p>
           </div>
 
           {/* Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
             {[
-              "Zoom in",
-              "Still dripping",
-              "Almost naked",
-              "Caught again",
-              "Touch me",
-              "Want more?",
-              "Getting wetter",
-              "Say please",
+              "Look at me",
+              "Come closer",
+              "Still here",
+              "You feel that?",
+              "Stay longer",
+              "Getting deeper",
+              "You like this?",
+              "Almost there",
             ].map((title, index) => (
               <div key={index} className="group cursor-pointer">
                 <div className="aspect-square bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl mb-3 flex items-center justify-center overflow-hidden">
@@ -308,7 +306,7 @@ export default function Landing({
               onClick={onRegisterClick}
               className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-semibold text-lg transition-colors"
             >
-              Chat now for free!
+              CHAT NOW FOR FREE
             </button>
           </div>
         </div>
@@ -319,8 +317,8 @@ export default function Landing({
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
-              {amberLogo ? (
-                <img src={amberLogo} alt="Amber Logo" className="h-12 w-auto" />
+              {evaLogo ? (
+                <img src={evaLogo} alt="Eva Logo" className="h-12 w-auto" />
               ) : (
                 <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
                   <span className="text-black font-bold text-xs">🔥</span>
@@ -329,8 +327,15 @@ export default function Landing({
             </div>
 
             <div className="text-gray-400 text-sm text-center md:text-left">
-              <p>Copyright 2025 | SPEAK WITH AMBER All Rights Reserved.</p>
+            
+            <a href="/terms-of-service" target="_blank"  className="text-gray-400 hover:text-white">Terms of Service | </a>
+            <a href="/privacy-policy" target="_blank"  className="text-gray-400 hover:text-white">Privacy Policy | </a>
+            <a href="/cookie-policy" target="_blank"  className="text-gray-400 hover:text-white">Cookie Policy</a>
+
+
+
             </div>
+          
           </div>
         </div>
       </footer>

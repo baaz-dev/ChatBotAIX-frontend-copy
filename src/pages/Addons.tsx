@@ -37,7 +37,7 @@ export default function Addons() {
         Time Credits
       </h1>
       <p className="text-white mb-8 text-center">
-        Buy time credits to chat with Amber. Images are $4.99 each when
+        Buy time credits to chat with Eva. Images are $4.99 each when
         unlocked.
       </p>
 

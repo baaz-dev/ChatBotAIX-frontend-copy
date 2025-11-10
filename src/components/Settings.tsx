@@ -325,7 +325,7 @@ export default function Settings() {
                     <div>
                       <h3 className="text-xl font-bold">Time Credits System</h3>
                       <p className="text-gray-400">
-                        Pay for time credits to chat with Amber
+                        Pay for time credits to chat with Eva
                       </p>
                     </div>
 

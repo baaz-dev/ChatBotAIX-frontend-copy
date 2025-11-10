@@ -186,7 +186,7 @@ export default function ChatUI() {
 
           // Only show toast on actual sign in, not navigation
           if (userData.is_fresh_login) {
-            toast.success("Welcome to Amber!");
+            toast.success("Welcome to Eva!");
           }
 
           // Only trigger AI welcome message for truly new users (fresh login)
@@ -215,7 +215,7 @@ export default function ChatUI() {
                   ...prev,
                   {
                     id: Date.now(),
-                    text: data.response || "Hey baby, I'm Amber!",
+                    text: data.response || "Hey baby, I'm Eva!",
                     sender: "ai",
                     image_url: data.image_url,
                     blurred: data.blurred || false,
@@ -245,9 +245,9 @@ export default function ChatUI() {
                 console.error("Failed to trigger welcome message:", error);
                 // Fallback to local welcome message if AI call fails
                 const fallbackMessages = [
-                  "Hey baby, I'm Amber, I'm here to fulfill all your fantasies, what's your name and what you want to do to me",
-                  "Hey baby I'm Amber your personal cum dumpster, what's your name and what you want to do to me",
-                  "Hi there sexy, I'm Amber and I'm all yours. What should I call you?",
+                  "Hey baby, I'm Eva, I'm here to fulfill all your fantasies, what's your name and what you want to do to me",
+                  "Hey baby I'm Eva your personal cum dumpster, what's your name and what you want to do to me",
+                  "Hi there sexy, I'm Eva and I'm all yours. What should I call you?",
                 ];
 
                 setMessages((prev) => [
@@ -342,7 +342,7 @@ export default function ChatUI() {
           // Show toast notification instead of system message
           toast.success("Time credits added successfully!");
 
-          // Add Amber's natural response
+          // Add Eva's natural response
           const timeResponses = [
             "Mmm, now we have more time to play... I'm so wet for you",
             "Oh baby, thank you for wanting to spend more time with me",
@@ -400,7 +400,7 @@ export default function ChatUI() {
               // Show toast notification instead of system message
               toast.success("Image unlocked and added to gallery!");
 
-              // Add Amber's natural response
+              // Add Eva's natural response
               const imageResponses = [
                 "Hmm baby, you like what you see?",
                 "Mmm, I hope that view makes you hard...",
@@ -649,7 +649,7 @@ export default function ChatUI() {
               (m) =>
                 m.text.includes("welcome") ||
                 m.text.includes("Payment successful") ||
-                m.text.includes("I'm Amber")
+                m.text.includes("I'm Eva")
             )
           ) {
             return [...prev, ...formatted];
@@ -680,7 +680,7 @@ export default function ChatUI() {
           "Failed to load chat history. Starting fresh conversation."
         );
         setMessages([
-          { id: 1, text: "Hey there 👋 I'm Amber…", sender: "ai" },
+          { id: 1, text: "Hey there 👋 I'm Eva…", sender: "ai" },
           {
             id: 2,
             text: "Let's start fresh! What's on your mind? 😘",
@@ -940,7 +940,7 @@ export default function ChatUI() {
             {sidebarOpen ? "✕" : "☰"}
           </button>
           <div className="flex items-center gap-2">
-            <h1 className="text-lg font-bold text-red-500">Amber</h1>
+            <h1 className="text-lg font-bold text-red-500">Eva</h1>
           </div>
         </div>
 
@@ -1166,7 +1166,7 @@ export default function ChatUI() {
               {sidebarOpen ? "←" : "→"}
             </button>
             <div className="flex items-center gap-2">
-              <h1 className="text-xl font-bold text-red-500">Amber</h1>
+              <h1 className="text-xl font-bold text-red-500">Eva</h1>
             </div>
           </div>
 

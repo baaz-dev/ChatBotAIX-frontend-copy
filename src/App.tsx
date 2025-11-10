@@ -12,6 +12,12 @@ import "react-toastify/dist/ReactToastify.css";
 import Settings from "./components/Settings";
 import Addons from "./pages/Addons";
 
+
+
+import TermsOfService from "./pages/TermsOfService";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import CookiePolicy from "./pages/CookiePolicy";
+
 // Admin Layout + Pages
 import AdminLayout from "./layouts/AdminLayout";
 import UsersPage from "./pages/admin/UsersPage";
@@ -48,6 +54,9 @@ function App() {
           <Route path="/addons" element={<Addons />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/accounts/email-verify" element={<EmailVerifyPage />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route
             path="/accounts/activate/:uidb64/:token/"
             element={<ActivationProcessor />}
