@@ -94,7 +94,7 @@ export default function TermsOfService() {
 		13. Contact
 		</strong><br />
 		For inquiries regarding purchases or digital content:<br />
-		📧 [dedicated email]<br />
+		📧 support@karmacorporation.cz<br />
 		Karma Corporation a.s. , Máchova 439/27, Vinohrady - 120 00 Praha - Czech Republic
 		</p>
       </div>

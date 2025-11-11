@@ -64,7 +64,7 @@ export default function CookiePolicy() {
 		•	withdraw consent;<br />
 		•	object to processing;<br />
 		•	request data portability.<br />
-		Contact: [dedicated privacy email].<br />
+		Contact: support@karmacorporation.cz.<br />
 		Non-EU users may exercise equivalent rights (CCPA, UK GDPR, PIPEDA).<br />
 		</p>
 		<p className="pt-4"><strong>

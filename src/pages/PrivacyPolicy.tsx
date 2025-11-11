@@ -161,7 +161,7 @@ export default function PrivacyPolicy() {
 		15. Contact Details
 		</strong><br />
 		For any information, clarification, or to exercise data protection rights, please contact:<br />
-		- [dedicated privacy email]<br />
+		- support@karmacorporation.cz<br />
 		- Karma Corporation a.s. - Máchova 439/27, Vinohrady - 120 00 Praha - Czech Republic.
 		</p>
 		<p className="pt-4"><strong>
