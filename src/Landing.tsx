@@ -1,4 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+const getCookie = (name: string): string | null => {
+  const match = document.cookie.match(
+    new RegExp("(^| )" + name + "=([^;]+)")
+  );
+  return match ? decodeURIComponent(match[2]) : null;
+};
+
+const setCookie = (name: string, value: string, days: number) => {
+  const expires = new Date();
+  expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+
+  document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires.toUTCString()}; path=/; SameSite=Lax`;
+};
 
 // Image paths from public folder
 const heroImage = "/hero.png";
@@ -19,12 +33,26 @@ type LandingProps = {
   onLoginClick: () => void;
 };
 
+
 export default function Landing({
   onRegisterClick,
   onLoginClick,
 }: LandingProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
+  useEffect(() => {
+    const isVerified = getCookie("age_verified");
+    if (!isVerified) {
+      setShowPopup(true);
+    }
+  }, []);
+  
+  const acceptAndContinue = () => {
+    setCookie("age_verified", "true", 30); // 30 giorni
+    setShowPopup(false);
+  };
+  
   const gridImages = [
     gridImage1, // Zoom in
     gridImage2, // Still dripping
@@ -38,6 +66,41 @@ export default function Landing({
 
   return (
     <div className="min-h-screen bg-black text-white w-full overflow-x-hidden">
+
+    {showPopup && (
+      <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
+        <div className="bg-gray-900 text-white p-8 rounded-2xl max-w-md w-full mx-4 text-center border border-gray-700">
+          <h2 className="text-2xl font-bold mb-4">
+            Are you 18+?
+          </h2>
+
+          <p className="text-gray-300 mb-6">
+            This website contains adult content. By entering, you confirm you are at least 18 years old.
+          </p>
+
+          <div className="flex flex-col gap-4">
+            {/* CONTINUA */}
+            <button
+              onClick={acceptAndContinue}
+              className="bg-red-600 hover:bg-red-700 px-6 py-3 rounded-full font-semibold transition-colors"
+            >
+              Yes, continue
+            </button>
+
+            {/* BLOCCA */}
+            <button
+              onClick={() => {
+                window.location.href = "https://www.google.com";
+              }}
+              className="bg-gray-700 hover:bg-gray-600 px-6 py-3 rounded-full font-semibold transition-colors"
+            >
+              No, leave site
+            </button>
+          </div>
+        </div>
+      </div>
+    )}
+
       {/* Header */}
       <header className="w-full bg-black border-b border-gray-800">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -325,17 +388,17 @@ export default function Landing({
                 </div>
               )}
             </div>
-
             <div className="text-gray-400 text-sm text-center md:text-left">
-            
-            <a href="/terms-of-service" target="_blank"  className="text-gray-400 hover:text-white">Terms of Service | </a>
-            <a href="/privacy-policy" target="_blank"  className="text-gray-400 hover:text-white">Privacy Policy | </a>
-            <a href="/cookie-policy" target="_blank"  className="text-gray-400 hover:text-white">Cookie Policy</a>
-
-
-
+              <a href="/terms-of-service" target="_blank"  className="text-gray-400 hover:text-white">Terms of Service | </a>
+              <a href="/privacy-policy" target="_blank"  className="text-gray-400 hover:text-white">Privacy Policy | </a>
+              <a href="/cookie-policy" target="_blank"  className="text-gray-400 hover:text-white">Cookie Policy</a>
             </div>
-          
+          </div>
+        </div>
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-gray-400 text-sm text-center md:text-center">
+              Karma Corporation st. Machova 439/27 PRAGUE , VAT CZ08638781 | <a href="mailto:support@karmacorporation.cz" target="_blank"  className="text-gray-400 hover:text-white">support@karmacorporation.cz</a> |
+              18+ disclaimer Secure payment / SSL <img src="cc-logo.png" alt="payment logo" className="inline-block h-6 ml-2 align-middle" />
           </div>
         </div>
       </footer>
