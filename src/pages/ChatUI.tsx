@@ -991,7 +991,7 @@ export default function ChatUI() {
               }}
               className="w-full text-left px-3 py-2 hover:bg-red-600 hover:text-white transition rounded-lg active:scale-95"
             >
-              Add-ons
+              Time Credits
             </button>
             <button
               onClick={handleSignOut}
@@ -1207,7 +1207,7 @@ export default function ChatUI() {
                     onClick={() => navigate("/addons")}
                     className="w-full text-left px-4 py-2 hover:bg-red-600 hover:text-white transition"
                   >
-                    Add-ons
+                    Time Credits
                   </button>
                   <button
                     onClick={handleSignOut}

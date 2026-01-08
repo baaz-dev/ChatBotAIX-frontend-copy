@@ -128,7 +128,7 @@ export default function Settings() {
                     : "hover:bg-gray-800"
                 }`}
               >
-                Subscription
+                Time Credits
               </button>
               <button
                 onClick={() => setActiveTab("security")}

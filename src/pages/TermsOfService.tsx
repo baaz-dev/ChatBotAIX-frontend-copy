@@ -8,8 +8,8 @@ export default function TermsOfService() {
 		<p className="pt-4"><strong>
 		1. Controller and Scope
 		</strong><br />
-		The Controller of these Terms of Sale is Karma Corporation a.s. , registered at Máchova 439/27, Vinohrady - 120 00 Praha - Czech Republic, email: [contact email].<br />
-		These Terms govern the sale and access to digital content and AI-powered services offered on the website [website URL], intended exclusively for adult users (18+).<br />
+		The Controller of these Terms of Sale is Karma Corporation a.s. , registered at Máchova 439/27, Vinohrady - 120 00 Praha - Czech Republic, email: support@karmacorporation.cz.<br />
+		These Terms govern the sale and access to digital content and AI-powered services offered on the website lady-eva.com, intended exclusively for adult users (18+).<br />
 		Accessing or purchasing services implies full acceptance of these Terms.<br />
 		</p>
 		<p className="pt-4"><strong>
