@@ -17,6 +17,8 @@ import Addons from "./pages/Addons";
 import TermsOfService from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import CookiePolicy from "./pages/CookiePolicy";
+import AiDisclosure from "./pages/AiDisclosure";
+import Disclosure2257 from "./pages/Disclosure2257";
 
 // Admin Layout + Pages
 import AdminLayout from "./layouts/AdminLayout";
@@ -55,6 +57,8 @@ function App() {
           <Route path="/settings" element={<Settings />} />
           <Route path="/accounts/email-verify" element={<EmailVerifyPage />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/ai-disclosure" element={<AiDisclosure />} />
+          <Route path="/2257" element={<Disclosure2257 />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route

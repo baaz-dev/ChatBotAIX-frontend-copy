@@ -14,6 +14,7 @@ export default function Register({ onSwitchToLogin, onClose }: RegisterProps) {
     username: "",
     email: "",
     password: "",
+    is_active: false
   });
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
@@ -22,9 +23,14 @@ export default function Register({ onSwitchToLogin, onClose }: RegisterProps) {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+
   const validateForm = () => {
     if (form.username.length < 3) {
       toast.error("Username must be at least 3 characters");
+      return false;
+    }
+    if (form.is_active == false) {
+      toast.error("You have to read and accept the Terms of Service and Privacy Policy before registration");
       return false;
     }
     if (!validateEmail(form.email)) {
@@ -138,6 +144,46 @@ export default function Register({ onSwitchToLogin, onClose }: RegisterProps) {
             disabled={isLoading}
           />
         </div>
+
+        <div className="flex items-center mt-4">
+          <input
+            type="checkbox"
+            name="is_active"
+            checked={form.is_active}
+            onChange={handleChange}
+            disabled={isLoading}
+            className="h-4 w-4 text-red-500 bg-gray-800 border-gray-600 rounded focus:ring-red-500"
+         />
+         <label className="ml-2 text-sm text-gray-300">
+         I've read and I agree to be bound by the 
+         <span className="ml-2 text-sm text-gray-300">
+         <a
+           href="/terms-of-service"
+           target="_blank"
+           rel="noopener noreferrer"
+           className="text-red-400 hover:underline"
+           onClick={(e) => e.stopPropagation()} 
+         >
+         Terms of Service 
+         </a>
+         </span>         
+          {" "}and
+          <span className="ml-2 text-sm text-gray-300">
+         <a
+           href="/privacy-policy"
+           target="_blank"
+           rel="noopener noreferrer"
+           className="text-red-400 hover:underline"
+           onClick={(e) => e.stopPropagation()} 
+         >
+         Privacy Policy
+         </a>
+         </span> 
+          .
+         </label>
+</div>
+
+
 
         <button
           type="submit"

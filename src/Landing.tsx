@@ -187,7 +187,8 @@ export default function Landing({
       {/* Hero Section */}
       <section className="relative w-full">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 md:p-12 mb-8">
+          {/*<div className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 md:p-12 mb-8"> */}
+          <div className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-0 md:p-12 mb-8">
             <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl mb-6 flex items-center justify-center">
               {heroImage ? (
                 <img
@@ -224,10 +225,12 @@ export default function Landing({
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             {/* Gallery */}
-            <div className="lg:w-1/2">
-              <div className="flex space-x-4 overflow-x-auto pb-4">
-                <div className="flex-shrink-0">
-                  <div className="w-64 h-48 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl mb-2 flex items-center justify-center">
+             {/* <div className="lg:w-1/2"> */}
+             <div className="lg:w-full">
+              <div className="flex flex-col lg:flex-row space-x-4 overflow-x-hidden pb-4">
+                <div className="flex-shrink-0 py-8">
+                  {/*<div className="w-64 h-48 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl mb-2 flex items-center justify-center">*/}
+                  <div className="w-full max-w-sm sm:max-w-none sm:w-64 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl mb-2 flex items-center justify-center">
                     {galleryImage1 ? (
                       <img
                         src={galleryImage1}
@@ -242,8 +245,9 @@ export default function Landing({
                   </div>
                   <p className="text-white text-center">Wanna see what’s underneath?</p>
                 </div>
-                <div className="flex-shrink-0">
-                  <div className="w-64 h-48 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl mb-2 flex items-center justify-center relative">
+                <div className="flex-shrink-0 py-8">
+                  {/*<div className="w-64 h-48 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl mb-2 flex items-center justify-center relative">*/}
+                  <div className="w-full max-w-sm sm:max-w-none sm:w-64 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl mb-2 flex items-center justify-center">
                     {galleryImage2 ? (
                       <img
                         src={galleryImage2}
@@ -301,7 +305,8 @@ export default function Landing({
       {/* Main Content Image */}
       <section className="py-16 w-full">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 md:p-12">
+          {/*<div className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 md:p-12">*/}
+          <div className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-0 md:p-12">
             <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl flex items-center justify-center">
               {mainContentImage ? (
                 <img
@@ -390,16 +395,21 @@ export default function Landing({
             </div>
             <div className="text-gray-400 text-sm text-center md:text-left">
               <a href="/terms-of-service" target="_blank"  className="text-gray-400 hover:text-white">Terms of Service | </a>
+              <a href="/ai-disclosure" target="_blank"  className="text-gray-400 hover:text-white">AI Disclosure | </a>
+              <a href="/2257" target="_blank"  className="text-gray-400 hover:text-white">2257 Exemption | </a>
               <a href="/privacy-policy" target="_blank"  className="text-gray-400 hover:text-white">Privacy Policy | </a>
               <a href="/cookie-policy" target="_blank"  className="text-gray-400 hover:text-white">Cookie Policy</a>
             </div>
           </div>
         </div>
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-gray-400 text-sm text-center md:text-center">
-              Karma Corporation st. Machova 439/27 PRAGUE , VAT CZ08638781 | <a href="mailto:support@karmacorporation.cz" target="_blank"  className="text-gray-400 hover:text-white">support@karmacorporation.cz</a> |
-              18+ disclaimer Secure payment / SSL <img src="cc-logo.png" alt="payment logo" className="inline-block h-6 ml-2 align-middle" />
+          <div className="text-gray-400 text-sm text-center md:text-center py-4">
+              Karma Corporation a.s., st. Machova 439/27 12 000 PRAGUE 2 Czech Republic, VAT CZ08638781 | <a href="mailto:support@karmacorporation.cz" target="_blank"  className="text-gray-400 hover:text-white">support@karmacorporation.cz</a> |
+              18+ disclaimer
           </div>
+          <div className="text-gray-400 text-sm text-center md:text-center py-4">
+              Secure payment / SSL <img src="cc-logo.png" alt="payment logo" className="inline-block h-6 ml-2 align-middle" />
+          </div>          
         </div>
       </footer>
     </div>
